@@ -92,6 +92,11 @@ struct ChatMessageListView: View {
                     scrollViewProxy.scrollTo(chatLastMessageId)
                 }
             }
+            .onChange(of: manager.chatgroup){ _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                    scrollViewProxy.scrollTo(chatLastMessageId)
+                }
+            }
             .onChange(of: manager.currentMessage){ _ in
                 throttler.throttle {
                     if offsetY < 800{
