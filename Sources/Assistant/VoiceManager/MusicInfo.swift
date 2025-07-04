@@ -114,6 +114,7 @@ public struct MusicInfo: View {
                     withAnimation {
                         audioManager.speakPlayer?.stop()
                         audioManager.speakPlayer = nil
+                        audioManager.playingState = .end
                     }
                     
                 } label: {
