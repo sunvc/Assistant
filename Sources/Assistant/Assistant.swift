@@ -467,10 +467,10 @@ struct CustomAlertWithTextField: View {
                         }
                 }
             
-            Text("修改分组名称")
+            Text(String(localized: "修改分组名称",bundle: .module))
                 .fontWeight(.semibold)
             
-            Text("此名称用来查找历史分组使用")
+            Text(String(localized: "此名称用来查找历史分组使用",bundle: .module))
                 .multilineTextAlignment(.center)
                 .font(.caption)
                 .foregroundStyle(.gray)
@@ -478,8 +478,8 @@ struct CustomAlertWithTextField: View {
             
             
             
-            TextField("输入分组名称", text: $text, axis: .vertical)
-                .frame(maxHeight: 150)
+            TextField(String(localized: "输入分组名称",bundle: .module), text: $text, axis: .vertical)
+                .frame(maxHeight: 80)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 15)
                 .background {
@@ -492,7 +492,7 @@ struct CustomAlertWithTextField: View {
                 Button {
                     show = false
                 } label: {
-                    Text("取消")
+                    Text(String(localized: "取消",bundle: .module))
                         .foregroundStyle(.white)
                         .fontWeight(.semibold)
                         .padding(.vertical, 8)
@@ -507,7 +507,7 @@ struct CustomAlertWithTextField: View {
                     show = false
                     confirm(text)
                 } label: {
-                    Text("确认")
+                    Text(String(localized: "确认",bundle: .module))
                         .foregroundStyle(.white)
                         .fontWeight(.semibold)
                         .padding(.vertical, 8)
@@ -537,9 +537,9 @@ struct StreamingLoadingView: View {
     
     var userType:String{
         if chatManager.isLoading && chatManager.currentMessage.content.isEmpty {
-            return "思考中"
+            return String(localized: "思考中",bundle: .module)
         }else{
-           return  "正在输入\(dots)"
+           return String(localized: "正在输入\(dots)",bundle: .module)
         }
     }
     
