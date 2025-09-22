@@ -15,10 +15,10 @@ let package = Package(
             targets: ["Assistant"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/uuneo/Defaults.git",.upToNextMajor(from: "0.0.1") ),
+        .package(url: "https://github.com/sunvc/Defaults.git",.upToNextMajor(from: "0.0.1") ),
         .package(url: "https://github.com/MacPaw/OpenAI",.upToNextMajor(from: "0.4.4")),
         .package(url: "https://github.com/groue/GRDB.swift",.upToNextMajor(from: "7.5.0")),
-        .package(url: "https://github.com/uuneo/Splash.git",.upToNextMajor(from: "0.0.1") ),
+        .package(url: "https://github.com/JohnSundell/Splash",.upToNextMajor(from: "0.16.0") ),
         .package(url: "https://github.com/onevcat/Kingfisher", .upToNextMajor(from: "8.3.3") ),
         .package(url: "https://github.com/swiftlang/swift-cmark", .upToNextMajor(from: "0.6.0") ),
         .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", .upToNextMajor(from: "2.4.1") ),

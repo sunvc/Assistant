@@ -1,10 +1,10 @@
 {
-  "originHash" : "0ca10f33ee58098a5a685611b10b4dc6b22a77dd52b36c85c153804ec57bf9db",
+  "originHash" : "bec02ed00253a7a46b619a9d8874538a9e96388c99600b91ef0e1b316499a0a6",
   "pins" : [
     {
       "identity" : "defaults",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uuneo/Defaults.git",
+      "location" : "https://github.com/sunvc/Defaults.git",
       "state" : {
         "revision" : "d88a5c8cdb498e7536ef5ff88e7120e9b5874806",
         "version" : "0.0.1"
@@ -49,10 +49,10 @@
     {
       "identity" : "splash",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uuneo/Splash.git",
+      "location" : "https://github.com/JohnSundell/Splash",
       "state" : {
-        "revision" : "2e3f17c2d09689c8bf175c4a84ff7f2ad3353301",
-        "version" : "0.0.1"
+        "revision" : "7f4df436eb78fe64fe2c32c58006e9949fa28ad8",
+        "version" : "0.16.0"
       }
     },
     {
