@@ -85,32 +85,40 @@ struct ChatMessageView: View {
     
     /// 用户消息视图
     private var userMessageView: some View {
-        MarkdownCustomView(content: message.request)
-            .padding()
-            .foregroundColor(.primary)
-            .background(.ultraThinMaterial)
-            .overlay {
-                Color.blue.opacity(0.2)
+        VStack{
+            if let image = message.image, let uiimage = UIImage(  contentsOfFile: image.path()  ){
+                Image(uiImage: uiimage)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 100)
             }
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .contextMenu{
-                Button {
-                    Task{
-                        guard let player = await AudioManager.shared.Speak(message.request)else { return }
-                        player.play()
-                        Haptic.impact(.light)
+            MarkdownCustomView(content: message.request)
+                .padding()
+                .foregroundColor(.primary)
+                .background(.ultraThinMaterial)
+                .overlay {
+                    Color.blue.opacity(0.2)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .contextMenu{
+                    Button {
+                        Task{
+                            guard let player = await AudioManager.shared.Speak(message.request)else { return }
+                            player.play()
+                            Haptic.impact(.light)
+                        }
+                    } label: {
+                        Label(String(localized: "朗读",bundle: .module), systemImage: "speaker.wave.3.fill")
                     }
-                } label: {
-                    Label(String(localized: "朗读",bundle: .module), systemImage: "speaker.wave.3.fill")
+
+                    Button {
+                        Haptic.impact(.light)
+                        Clipboard.set(message.request)
+                    } label: {
+                        Label(String(localized: "复制",bundle: .module), systemImage: "doc.on.doc")
+                    }
                 }
-                
-                Button {
-                    Haptic.impact(.light)
-                    Clipboard.set(message.request)
-                } label: {
-                    Label(String(localized: "复制",bundle: .module), systemImage: "doc.on.doc")
-                }
-            }
+        }
+
         
     }
     

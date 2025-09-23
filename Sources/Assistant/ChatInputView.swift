@@ -127,6 +127,7 @@ struct ChatInputView: View {
                     self.text = text.trimmingCharacters(in: .whitespaces)
                     if text.count > 1{
                         onSend(text)
+                        self.selectImage = nil
                         isFocusedInput = false
                     }else {
                         // "至少2个字符"
