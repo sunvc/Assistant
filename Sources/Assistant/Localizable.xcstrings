@@ -1263,6 +1263,7 @@
       }
     },
     "图片" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1571,6 +1572,7 @@
       }
     },
     "拍照" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1711,6 +1713,7 @@
       }
     },
     "文件" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
