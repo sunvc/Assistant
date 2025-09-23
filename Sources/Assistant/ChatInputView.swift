@@ -120,13 +120,15 @@ struct ChatInputView: View {
             }
             .transition(.scale)
         }else{
-            if !text.isEmpty {
+//            if !text.isEmpty {
                 // 发送按钮
                 Button(action: {
                     
                     self.text = text.trimmingCharacters(in: .whitespaces)
-                    if text.count > 1{
+                    if text.count > 0{
                         onSend(text)
+                        self.selectImage = nil
+                        self.selectFile = nil
                         isFocusedInput = false
                     }else {
                         // "至少2个字符"
@@ -145,45 +147,45 @@ struct ChatInputView: View {
                         .shadow(color: .gray.opacity(0.3), radius: 3, x: 0, y: 2)
                 }
                 .transition(.scale)
-            } else {
-                
-                // 附件菜单
-                Menu {
-  
-                    Button{
-                        self.showPhoto = true
-                    }label: {
-                        Label(String(localized: "图片",bundle: .module), systemImage: "photo.fill")
-                    }
-                    Button{
-                        self.showCamera = true
-                    }label: {
-                        Label(String(localized: "拍照",bundle: .module), systemImage: "camera.fill")
-                    }
-                    
-                    
-                    Button{
-                        self.showSelectFile = true
-                    }label: {
-                        Label(String(localized: "文件",bundle: .module), systemImage: "folder.fill")
-                    }
-                    
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                        .foregroundColor(.blue)
-                        .opacity(0.7)
-                        .background(Color.white)
-                        .clipShape(Circle())
-                        .shadow(color: .gray.opacity(0.3), radius: 3, x: 0, y: 2)
-                        .transition(.scale)
-                }
-                .transition(.scale)
-                
-
-            }
+//            } else {
+//                
+//                // 附件菜单
+//                Menu {
+//  
+//                    Button{
+//                        self.showPhoto = true
+//                    }label: {
+//                        Label(String(localized: "图片",bundle: .module), systemImage: "photo.fill")
+//                    }
+//                    Button{
+//                        self.showCamera = true
+//                    }label: {
+//                        Label(String(localized: "拍照",bundle: .module), systemImage: "camera.fill")
+//                    }
+//                    
+//                    
+//                    Button{
+//                        self.showSelectFile = true
+//                    }label: {
+//                        Label(String(localized: "文件",bundle: .module), systemImage: "folder.fill")
+//                    }
+//                    
+//                } label: {
+//                    Image(systemName: "plus.circle.fill")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 35, height: 35)
+//                        .foregroundColor(.blue)
+//                        .opacity(0.7)
+//                        .background(Color.white)
+//                        .clipShape(Circle())
+//                        .shadow(color: .gray.opacity(0.3), radius: 3, x: 0, y: 2)
+//                        .transition(.scale)
+//                }
+//                .transition(.scale)
+//                
+//
+//            }
         }
         
         

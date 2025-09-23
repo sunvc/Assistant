@@ -171,6 +171,13 @@ public class AudioManager: NSObject, ObservableObject,  AVAudioPlayerDelegate, S
     public func Speak(_ text: String, noCache:Bool = false) async -> AVAudioPlayer? {
         
         do{
+
+           let session =  AVAudioSession.sharedInstance()
+
+            try session.setCategory(.playback, mode: .default)
+
+            try session.setActive(true)
+
             let start = DispatchTime.now()
             await MainActor.run {
                 withAnimation(.default) {

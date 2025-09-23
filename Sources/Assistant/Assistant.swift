@@ -14,7 +14,7 @@ import PhotosUI
 public struct AssistantView<Content: View>:View {
     
     @Default(.assistantAccouns) var assistantAccouns
-    
+
     @Environment(\.dismiss) var dismiss
     
     @StateObject private var manager = openChatManager.shared
@@ -37,14 +37,18 @@ public struct AssistantView<Content: View>:View {
     @State private var selectImage:UIImage? = nil
     @State private var showSelectFile:Bool = false
     @State private var selectFile:URL? = nil
-    
+
+
     @ViewBuilder var content: ()-> Content
     
     var close: (() -> ())? = nil
-    
+    var logoBtn: (() -> ())? = nil
+
+
     public init( imageName: String? = nil,
                  content: @escaping ()-> Content,
                  toast: ((ToastMode, String)-> Void)? = nil,
+                 logoBtn: (() -> ())? = nil,
                  close: (() -> ())? = nil ) {
         
         if let imageName{
@@ -53,7 +57,7 @@ public struct AssistantView<Content: View>:View {
         openChatManager.shared.Toast = toast
         self.close = close
         self.content = content
-        
+        self.logoBtn = logoBtn
     }
     
     
@@ -73,6 +77,7 @@ public struct AssistantView<Content: View>:View {
                         Spacer()
                         
                         VStack{
+
                             Group{
                                 switch manager.imageName {
                                 case .module(let string):
@@ -85,8 +90,10 @@ public struct AssistantView<Content: View>:View {
                             }
                             .scaledToFit()
                             .frame(width: 100)
-                            .VButton( onRelease: { _ in true })
-                            
+                            .onTapGesture(count: 17) {
+                                self.logoBtn?()
+                            }
+
                             Text(String(localized: "嗨! 我是智能助手",bundle: .module))
                                 .font(.title)
                                 .fontWeight(.medium)
