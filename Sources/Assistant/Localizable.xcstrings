@@ -141,6 +141,34 @@
         }
       }
     },
+    "App 所需的账户信息，自行在各大AI网站获取，例如ChatGPT：https://openai.com, 或 自行建立大模型提供服务.（App 支持所有符合 ChatGPT SDK 的模型服务 ）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtain the account information required by the App on major AI websites, such as ChatGPT: https://openai.com, or set up your own large model to provide services. (The App supports all model services compatible with the ChatGPT SDK.)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appに必要なアカウント情報は、各AIサイト（例：ChatGPT https://openai.com）で自行取得するか、独自に大規模モデルを構築してサービスを提供してください。（AppはChatGPT SDK準拠のすべてのモデルサービスをサポートしています）"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱에 필요한 계정 정보는 각 AI 웹사이트(예: ChatGPT https://openai.com)에서 직접 획득하거나, 자체 대형 모델을 구축하여 서비스를 제공하십시오. (앱은 ChatGPT SDK를 준수하는 모든 모델 서비스를 지원합니다)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 所需的账户信息，请自行在各大 AI 网站获取，例如 ChatGPT：https://openai.com，或自行搭建大模型提供服务。（App 支持所有符合 ChatGPT SDK 的模型服务）"
+          }
+        }
+      }
+    },
     "BasePath" : {
       "localizations" : {
         "en" : {
