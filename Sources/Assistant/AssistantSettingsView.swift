@@ -141,7 +141,7 @@ public struct AssistantSettingsView: View {
                 }header: {
                     Text(String(localized: "账户列表",bundle: .module))
                 }footer:{
-                    Text("App 所需的账户信息，自行在各大AI网站获取，例如ChatGPT：https://openai.com, 或 自行建立大模型提供服务.（App 支持所有符合 ChatGPT SDK 的模型服务 ）")
+                    Text(String(localized: "App 所需的账户信息，自行在各大AI网站获取，例如ChatGPT：https://openai.com, 或 自行建立大模型提供服务.（App 支持所有符合 ChatGPT SDK 的模型服务 ）"))
                 }
 
                 
